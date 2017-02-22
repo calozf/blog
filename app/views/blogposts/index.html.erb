@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Blogposts</h1>
+
+<div class="container">
+  <div class="row">
+    <% @blogposts.each do |blogpost| %>
+      <div class="col-xs-6 col-sm-2 col-md-4">
+        <h1><%= blogpost.name %></h1>
+        <%= image_tag(blogpost.image_url, class: "img-responsive") %>
+        <p><%= blogpost.date %></p>
+        <p><%= blogpost.description %></p>
+      </div><!-- /col -->
+    <% end %>
+  </div>
+</div>
+
+<br>
+
+<%= link_to 'New Blogpost', new_blogpost_path %>

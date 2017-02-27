@@ -1,0 +1,61 @@
+<!-- Page Content -->
+<div class="container">
+
+    <div class="row">
+
+
+        <!-- Blog Entries Column -->
+        <div class="col-md-8">
+
+            <h1 class="page-header">Latest Articles</h1>
+                <% @blogposts.each do |blogpost| %>
+                    <h2><%= blogpost.name %></h2>
+                    <p><span class="glyphicon glyphicon-time"></span> Posted <%= blogpost.date %></p>
+                    <hr>
+                    <%= image_tag(blogpost.image_url, class: "img-responsive") %>
+                    <hr>
+                    <p><%= blogpost.description %></p>
+                    <a class="btn btn-primary" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+                    <hr>
+                <% end %>
+
+                <!-- Pager -->
+                <ul class="pager">
+                    <li class="previous">
+                        <a href="#">&larr; Older</a>
+                    </li>
+                    <li class="next">
+                        <a href="#">Newer &rarr;</a>
+                    </li>
+                </ul>
+
+            </div>
+
+            <!-- Blog Sidebar Widgets Column -->
+            <div class="col-md-4">
+
+                <!-- Blog Search Well -->
+                <div class="well">
+                    <h4>Blog Search</h4>
+                    <div class="input-group">
+                        <input type="text" class="form-control">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button">
+                                <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                        </span>
+                    </div>
+                    <!-- /.input-group -->
+                </div>
+
+                <!-- Side Widget Well -->
+                <div class="well">
+                    <h4>About Me</h4>
+                    <hr>
+                    <p>Hello! Thank you for checking my portfolio. I hope that you will find useful information about me and my work. I do all sorts of things, from marketing to web development. I am passionnate about creating beautiful websites and I would love to hear about your project!</p>
+                </div>
+
+            </div>
+
+        </div>
+    </div> <!-- end container -->

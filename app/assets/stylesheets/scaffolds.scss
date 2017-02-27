@@ -11,7 +11,6 @@ p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
-  margin: 33px;
 }
 
 pre {
@@ -86,4 +85,14 @@ div {
 
 label {
   display: block;
+}
+
+.btn-primary {
+  background-color: white;
+  border-color: #9B4848;
+}
+
+.btn-primary:hover {
+  background-color: #9B4848;
+  border-color: #7c3939;
 }

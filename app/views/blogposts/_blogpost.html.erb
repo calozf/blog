@@ -5,7 +5,7 @@
       <h1><%= blogpost.name %></h1>
       <p><%= blogpost.description %></p>
       <p><%= blogpost.date %></p>
-      <p><%= link_to 'Show', blogpost %> <%= link_to 'Edit', edit_product_path(blogpost) %> <%= link_to 'Destroy', blogpost, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+      <p><%= link_to 'Show', blogpost %> <%= link_to 'Destroy', blogpost, method: :delete, data: { confirm: 'Are you sure?' } %></p>
     </div><!-- /col -->
   <% end %>
 </div>

@@ -34,18 +34,17 @@
             <!-- Blog Sidebar Widgets Column -->
             <div class="col-md-4">
 
-                <!-- Blog Search Well -->
+                <!-- Blog Search -->
                 <div class="well">
-                    <h4>Blog Search</h4>
+                    <%= form_tag("/blogposts", method: "get") do %>
+                    <h4><%= label_tag(:q, "Blog Search") %></h4>
                     <div class="input-group">
-                        <input type="text" class="form-control">
+                        <%= text_field_tag(:q, nil, class: "form-control") %>
                         <span class="input-group-btn">
-                            <button class="btn btn-default" type="button">
-                                <span class="glyphicon glyphicon-search"></span>
-                        </button>
+                            <%= button_tag("Go", class: "btn btn-default") %>
                         </span>
-                    </div>
-                    <!-- /.input-group -->
+                    </div><!-- /input-group -->
+                    <% end %>
                 </div>
 
                 <!-- Side Widget Well -->

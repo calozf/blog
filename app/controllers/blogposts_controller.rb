@@ -4,7 +4,12 @@ class BlogpostsController < ApplicationController
   # GET /blogposts
   # GET /blogposts.json
   def index
-    @blogposts = Blogpost.all
+    if params[:q]
+      search_term = params[:q]
+      @blogposts = Blogpost.search(search_term)
+    else
+      @blogposts = Blogpost.all
+    end
   end
 
   # GET /blogposts/1

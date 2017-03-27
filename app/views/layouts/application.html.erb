@@ -50,8 +50,13 @@
 </nav>
 
     <!-- Flash notice -->
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <% if notice %> 
+      <p id="notice" class="alert alert-success"><%= notice %></p>
+    <% end %>
+
+    <%if alert %>
+      <p id="alert" class="alert alert-success"><%= alert %></p>
+    <% end %>
 
     <div class="page-wrap">
       <%= yield %>

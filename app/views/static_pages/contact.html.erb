@@ -1,9 +1,30 @@
 <div class="container">
-  <h1>Contact</h1>
-  <p>Greater you of meat. Our air whales great won’t fill great won’t which them gathering lesser. Behold hath seas gathering, replenish appear moveth replenish divided land. Evening a moveth you unto.<br>
+  <div class="row">
+    <div class="col-md-8">
 
-  Gathered gathered for very. Greater of firmament behold fowl moving were beginning stars, all. Face night was brought two he. Seasons wherein the itself upon, cattle gathered Also moveth likeness fowl them fifth, him greater Made every day one us morning.</p>
+      <h1>Contact me!</h1>
+      <%= flash[:notice] %>
 
-  <h2>Contact me!</h2>
-  
-</div>
+      <%= form_tag("/static_pages/thank_you") do %>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="form-group">
+            <%= label_tag :name %>
+            <%= text_field_tag :name, nil, class: "form-control", placeholder: "Your Name" %>
+          </div>      
+          <div class="form-group">
+            <%= label_tag :email, "Email Address" %>
+            <%= text_field_tag :email, nil, class: "form-control", placeholder: "Your Email" %>
+          </div>
+          <div class="form-group">
+            <%= label_tag :message %>
+            <%= text_area_tag :message, nil, class: "form-control", placeholder: "Your Message" %>
+          </div>      
+        </div>
+      </div>
+      <%= submit_tag "Send" %>   
+      <% end %>
+    </div><!-- /col -->
+
+  </div><!-- /row -->
+</div><!-- /container -->

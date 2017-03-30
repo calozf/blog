@@ -1,24 +1,34 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @blogpost.name %>
-</p>
+<div class="container blogpost">
+  <div class="row">
+    <div class="col-md-8 col-xs-12">
+      <p><span class="glyphicon glyphicon-time"></span> <%= @blogpost.date %></p>
+      <h1><%= @blogpost.name %><h1>
+      <hr>
+      <%= image_tag(@blogpost.image_url, class: "img-responsive detail") %>
+      <hr>
+      <p><%= @blogpost.description %></p>
+      <hr>
+    </div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @blogpost.description %>
-</p>
-
-<p>
-  <strong>Image url:</strong>
-  <%= @blogpost.image_url %>
-</p>
-
-<p>
-  <strong>Date:</strong>
-  <%= @blogpost.date %>
-</p>
+    <div class="col-md-4 col-xs-12">
+      <!-- Blog Search -->
+      <div class="well">
+          <%= form_tag("/blogposts", method: "get") do %>
+          <h4><%= label_tag(:q, "Blog Search") %></h4>
+          <div class="input-group">
+              <%= text_field_tag(:q, nil, class: "form-control") %>
+              <span class="input-group-btn">
+                  <%= button_tag("Go", class: "btn btn-default") %>
+              </span>
+          </div><!-- /input-group -->
+          <% end %>
+      </div>
+    </div>
+  </div><!-- /row -->
 
 <%= link_to 'Edit', edit_blogpost_path(@blogpost) %> |
 <%= link_to 'Back', blogposts_path %>
+
+</div><!-- /container -->

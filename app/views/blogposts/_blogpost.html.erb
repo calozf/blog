@@ -1,11 +1,13 @@
-<div class="row">
-  <% @blogposts.each do |blogpost| %>
-    <div class="col-md-12">
-      <%= image_tag(blogpost.image_url, class: "img-responsive") %>
-      <h1><%= blogpost.name %></h1>
-      <p><%= blogpost.description %></p>
-      <p><%= blogpost.date %></p>
-      <p><%= link_to 'Show', blogpost %> <%= link_to 'Destroy', blogpost, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-    </div><!-- /col -->
-  <% end %>
+<div class="container">
+  <div class="row">
+    <% @blogposts.each do |blogpost| %>
+      <div class="col-md-12">
+        <%= image_tag(blogpost.image_url, class: "img-responsive") %>
+        <h1><%= blogpost.name %></h1>
+        <p><%= blogpost.description %></p>
+        <p><%= blogpost.date %></p>
+        <p><%= link_to 'Show', blogpost %> <%= link_to 'Destroy', blogpost, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+      </div><!-- /col -->
+    <% end %>
+  </div>
 </div>

@@ -16,6 +16,7 @@ class BlogpostsController < ApplicationController
   # GET /blogposts/1
   # GET /blogposts/1.json
   def show
+    @comments = @blogpost.comments.order("created_at DESC")
   end
 
   # GET /blogposts/new
